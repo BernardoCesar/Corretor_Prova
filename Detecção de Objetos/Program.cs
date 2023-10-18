@@ -3,20 +3,35 @@
 namespace Projeto {
 	class Program {
 		static void Main(string[] args) {
-			using (SKBitmap bitmap = SKBitmap.Decode("Caminho da imagem de entrada")) {
-				Console.WriteLine(bitmap.ColorType);
-
+			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\HENRIQUE.CORT\\Desktop\\ComputaçãoCognitiva\\ATV_Grupo_1\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1.png"),
+				bitmapSaida = new SKBitmap(new SKImageInfo(bitmapEntrada.Width, bitmapEntrada.Height, SKColorType.Gray8))) {
+				
 				unsafe {
-					byte* ptr = (byte*)bitmap.GetPixels();
+					byte* entrada = (byte*)bitmapEntrada.GetPixels();
+					byte* saida = (byte*)bitmapSaida.GetPixels();
 
-					ptr[0] = 0; // B
-					ptr[1] = 255; // G
-					ptr[2] = 255; // R
-					ptr[3] = 255; // A
+					long media= 0;
+					int pixelsTotais = bitmapEntrada.Width * bitmapEntrada.Height;
+
+					for (int e = 0, s = 0; s < pixelsTotais; e += 4, s++) {
+						saida[s] = (byte)((entrada[e] +  entrada[e + 1] + entrada[e + 2] )/3);
+						media += saida[s];
+					}	
+					media = (byte)(media /pixelsTotais);	
+
+					for (int s = 0; s < pixelsTotais; s++) {
+						if ( saida[s] > media){
+							saida[s] = 0;
+						}else{
+							saida[s] = 255;
+						};
+					}	
+					
+							
 				}
 
-				using (FileStream stream = new FileStream("Caminho da imagem de saída", FileMode.OpenOrCreate, FileAccess.Write)) {
-					bitmap.Encode(stream, SKEncodedImageFormat.Png, 100);
+				using (FileStream stream = new FileStream("C:\\Users\\HENRIQUE.CORT\\Desktop\\ComputaçãoCognitiva\\ATV_Grupo_1\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto Saida.png", FileMode.OpenOrCreate, FileAccess.Write)) {
+					bitmapSaida.Encode(stream, SKEncodedImageFormat.Png, 100);
 				}
 			}
 		}
