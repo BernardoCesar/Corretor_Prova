@@ -1,23 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "cies/7IJ3HeOjoACcxblCrqW8aEAgovle5qIVh4GwP4VUdfU4DFRprY3KhCjgBrDGm0ihwWMgK6j1NDqawsZgw==",
-  "success": false,
+  "dgSpecHash": "NXsSy99/9FlctkHegBvVsY2PpwZ4apXliKcsSAcUSHGMcEEdUzOlxgRxQoNGdfIpWDCQrwCFbklk1+mAOWSiTA==",
+  "success": true,
   "projectFilePath": "C:\\Users\\HENRIQUE.CORT\\Desktop\\ComputaçãoCognitiva\\ATV_Grupo_1\\Corretor_Prova\\Detecção de Objetos\\Projeto.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp\\2.88.3\\skiasharp.2.88.3.nupkg.sha512",
+    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp\\2.88.6\\skiasharp.2.88.6.nupkg.sha512",
     "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.6\\skiasharp.nativeassets.linux.2.88.6.nupkg.sha512",
-    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.3\\skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",
-    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.3\\skiasharp.nativeassets.win32.2.88.3.nupkg.sha512"
+    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.6\\skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",
+    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.6\\skiasharp.nativeassets.win32.2.88.6.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Downgrade de pacote detectado: SkiaSharp de 2.88.6 para 2.88.3. Referencie o pacote diretamente do projeto para selecionar uma versão diferente. \r\n Projeto -> SkiaSharp.NativeAssets.Linux 2.88.6 -> SkiaSharp (>= 2.88.6) \r\n Projeto -> SkiaSharp (>= 2.88.3)",
-      "libraryId": "SkiaSharp",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

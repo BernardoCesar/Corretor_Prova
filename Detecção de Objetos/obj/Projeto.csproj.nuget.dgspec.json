@@ -42,7 +42,7 @@
           "dependencies": {
             "SkiaSharp": {
               "target": "Package",
-              "version": "[2.88.3, )"
+              "version": "[2.88.6, )"
             },
             "SkiaSharp.NativeAssets.Linux": {
               "target": "Package",
