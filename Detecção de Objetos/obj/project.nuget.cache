@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "NXsSy99/9FlctkHegBvVsY2PpwZ4apXliKcsSAcUSHGMcEEdUzOlxgRxQoNGdfIpWDCQrwCFbklk1+mAOWSiTA==",
+  "dgSpecHash": "Al6J5qZR0NiJiJh/VeNZRq+/bsVBTPqjDKQO7TewaWIndjr1dFanrjtPwLuG6nBpmk1ADJbWSGmGwbJimOnYsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HENRIQUE.CORT\\Desktop\\ComputaçãoCognitiva\\ATV_Grupo_1\\Corretor_Prova\\Detecção de Objetos\\Projeto.csproj",
+  "projectFilePath": "C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Projeto.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp\\2.88.6\\skiasharp.2.88.6.nupkg.sha512",
-    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.6\\skiasharp.nativeassets.linux.2.88.6.nupkg.sha512",
-    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.6\\skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",
-    "C:\\Users\\HENRIQUE.CORT\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.6\\skiasharp.nativeassets.win32.2.88.6.nupkg.sha512"
+    "C:\\Users\\bernardo.figueiredo\\.nuget\\packages\\skiasharp\\2.88.6\\skiasharp.2.88.6.nupkg.sha512",
+    "C:\\Users\\bernardo.figueiredo\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.6\\skiasharp.nativeassets.linux.2.88.6.nupkg.sha512",
+    "C:\\Users\\bernardo.figueiredo\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.6\\skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",
+    "C:\\Users\\bernardo.figueiredo\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.6\\skiasharp.nativeassets.win32.2.88.6.nupkg.sha512"
   ],
   "logs": []
 }

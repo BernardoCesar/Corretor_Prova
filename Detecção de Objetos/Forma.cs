@@ -219,6 +219,30 @@ namespace Projeto {
 
 			return formasIndividuais;
 		}
+			public static unsafe bool ValidarGabarito(byte* imagem,  int largura, int altura, int x0, int y0, int x1, int y1, bool considerar8Vizinhos) {
+			List<Forma> formasIndividuais = new List<Forma>();
+			Stack<ElementoPilha> pilha = new Stack<ElementoPilha>(2048);
+
+        	int i = y0 * largura + x0;
+    		for (int y = y0; y <= y1; y++) {
+    		    for (int x = x0; x <= x1; x++, i++) {
+					if (imagem[i] == 255) {
+						Forma forma = new Forma(x, y);
+						pilha.Push(new ElementoPilha(x, y, i));
+						imagem[i] = 254;
+						ConsumirForma(imagem, x1 - x0 + 1, y1 - y0 + 1, forma, pilha, considerar8Vizinhos);
+						forma.AtualizarCentro();
+						formasIndividuais.Add(forma);
+					}
+				}
+			}
+
+			if(formasIndividuais.Count == 1){
+				return true;
+			}else{
+				return false;
+			}
+		}
 
 		public int Area, X0, Y0, X1, Y1, CentroX, CentroY;
 
