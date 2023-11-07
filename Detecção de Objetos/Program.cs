@@ -1,4 +1,6 @@
-﻿using SkiaSharp;
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
+using SkiaSharp;
 
 namespace Projeto {
 	class Program {
@@ -36,7 +38,7 @@ namespace Projeto {
 		}
 
 		static void Main(string[] args) {
-			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1.png"),
+			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 2.png"),
 				bitmapSaida = new SKBitmap(new SKImageInfo(bitmapEntrada.Width, bitmapEntrada.Height, SKColorType.Gray8))) {
 
 				unsafe {
@@ -63,12 +65,12 @@ namespace Projeto {
 					}
 				}
 
-				using (FileStream stream = new FileStream("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1 Limiarizado.png", FileMode.OpenOrCreate, FileAccess.Write)) {
+				using (FileStream stream = new FileStream("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 2 Limiarizado.png", FileMode.OpenOrCreate, FileAccess.Write)) {
 					bitmapSaida.Encode(stream, SKEncodedImageFormat.Png, 100);
 				}
 			}
 
-			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1 Limiarizado.png"),
+			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 2 Limiarizado.png"),
 				bitmapSaidaAritmetica = new SKBitmap(new SKImageInfo(bitmapEntrada.Width, bitmapEntrada.Height, SKColorType.Gray8))) {
 
 				int largura = bitmapEntrada.Width;
@@ -109,35 +111,48 @@ namespace Projeto {
 						List<int> alternativa_y1 = new List<int> { 376, 441, 505, 570, 635, 699, 764, 829, 893, 958 };
 
 						Console.WriteLine("Gabarito Correto!");
+						Dictionary<int, List<string>> questoes= new Dictionary<int, List<string>>();
+						for(int y = 1; y < 11; y++){
+							questoes.Add(y, new List<string>());
+						}
 
 						for (int forma = 0; forma < formasIndividuais.Count; forma++){
 							for (int y = 0; y < 10; y++){
 								for (int x = 0; x < 5; x++){
 									if(x==0 && formasIndividuais[forma].FazInterseccao(alternativa_x0[x], alternativa_y0[y], alternativa_x1[x], alternativa_y1[y]) == true){
-										Console.WriteLine("Questão " + (y+1) + ": A");
-
+										questoes[y+1].Add("A");
 									}else if(x==1 && formasIndividuais[forma].FazInterseccao(alternativa_x0[x], alternativa_y0[y], alternativa_x1[x], alternativa_y1[y]) == true){
-										Console.WriteLine("Questão " +(y+1) + ": B");
-
+										questoes[y+1].Add("B");
 									}else if(x==2 && formasIndividuais[forma].FazInterseccao(alternativa_x0[x], alternativa_y0[y], alternativa_x1[x], alternativa_y1[y]) == true){
-										Console.WriteLine("Questão " +(y+1)+ ": C");
-
+										questoes[y+1].Add("C");
 									}else if(x==3 && formasIndividuais[forma].FazInterseccao(alternativa_x0[x], alternativa_y0[y], alternativa_x1[x], alternativa_y1[y]) == true){
-										Console.WriteLine("Questão " + (y+1) +": D");
-
+										questoes[y+1].Add("D");
 									}else if(x==4 && formasIndividuais[forma].FazInterseccao(alternativa_x0[x], alternativa_y0[y], alternativa_x1[x], alternativa_y1[y]) == true){
-										Console.WriteLine("Questão " + (y+1) +": E");
-
+										questoes[y+1].Add("E");
 									}
 								}
 							}
 						}
 
+					for(int y = 1; y < 11; y++){
+						if(questoes[y].Count == 0){
+							Console.WriteLine("Questão " + y + ": Nenhuma alternativa");
+						}else{
+							Console.Write("Questão " + y + ":");
+							for(int x = 0; x < questoes[y].Count; x++){
+								if(x < questoes.Count-1){
+									Console.Write(questoes[y][x] + " ");
+								}
+							}
+							Console.Write("\n");
+						}
+					}
+
 					}else{
 						Console.WriteLine("Gabarito errado");
 					}
 				}
-					using (FileStream stream = new FileStream("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1 Saida.png", FileMode.OpenOrCreate, FileAccess.Write)) {
+					using (FileStream stream = new FileStream("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 2 Saida.png", FileMode.OpenOrCreate, FileAccess.Write)) {
 						bitmapSaidaAritmetica.Encode(stream, SKEncodedImageFormat.Png, 100);
 					}
 			}

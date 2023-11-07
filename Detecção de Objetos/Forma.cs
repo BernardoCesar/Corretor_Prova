@@ -224,7 +224,9 @@ namespace Projeto {
 				for(int y = 0; y<formasIndividuais.Count; y++){
 					for(int x = 0; x<coordenadas.Count; x++){
 						if(formasIndividuais[y].FazInterseccao(coordenadas[x].x0, coordenadas[x].y0, coordenadas[x].x1, coordenadas[x].y1)){
+							if(formasIndividuais[y].Area>2000){
 							quadrados_validacao++;
+							}
 						}
 					}
 				}
