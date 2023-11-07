@@ -38,7 +38,7 @@ namespace Projeto {
 		}
 
 		static void Main(string[] args) {
-			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1.png"),
+			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\questao_8_img2.png"),
 				bitmapSaida = new SKBitmap(new SKImageInfo(bitmapEntrada.Width, bitmapEntrada.Height, SKColorType.Gray8))) {
 
 				unsafe {
@@ -65,12 +65,12 @@ namespace Projeto {
 					}
 				}
 
-				using (FileStream stream = new FileStream("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1 Limiarizado.png", FileMode.OpenOrCreate, FileAccess.Write)) {
+				using (FileStream stream = new FileStream("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\questao_8_img2 Limiarizado.png", FileMode.OpenOrCreate, FileAccess.Write)) {
 					bitmapSaida.Encode(stream, SKEncodedImageFormat.Png, 100);
 				}
 			}
 
-			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1 Limiarizado.png"),
+			using (SKBitmap bitmapEntrada = SKBitmap.Decode("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\questao_8_img2 Limiarizado.png"),
 				bitmapSaidaAritmetica = new SKBitmap(new SKImageInfo(bitmapEntrada.Width, bitmapEntrada.Height, SKColorType.Gray8))) {
 
 				int largura = bitmapEntrada.Width;
@@ -150,7 +150,7 @@ namespace Projeto {
 						Console.WriteLine("Gabarito errado");
 					}
 				}
-					using (FileStream stream = new FileStream("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\Gabarito Correto 1 Saida.png", FileMode.OpenOrCreate, FileAccess.Write)) {
+					using (FileStream stream = new FileStream("C:\\Users\\bernardo.figueiredo\\Corretor_Prova\\Detecção de Objetos\\questao_8_img2 Saida.png", FileMode.OpenOrCreate, FileAccess.Write)) {
 						bitmapSaidaAritmetica.Encode(stream, SKEncodedImageFormat.Png, 100);
 					}
 			}
